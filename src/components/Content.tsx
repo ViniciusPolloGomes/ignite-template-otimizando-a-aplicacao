@@ -20,7 +20,7 @@ interface ContentProps {
   }>;
 }
 
-function MovieItems({ selectedGenre, movies }: ContentProps) {
+function ContentComponent({ selectedGenre, movies }: ContentProps) {
   return (
     <div className="container">
       <header>
@@ -38,6 +38,7 @@ function MovieItems({ selectedGenre, movies }: ContentProps) {
   )
 }
 
-export const Content = memo(MovieItems,(prevProps,nextProps)=>{
-  return Object.is(prevProps.movies,nextProps.movies)
+export const Content = memo(ContentComponent,(prevProps,nextProps)=>{
+  return  Object.is(prevProps.selectedGenre,nextProps.selectedGenre)
+  
 })
